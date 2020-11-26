@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <h1>Nomad News</h1>
+  <div>
+    Order by: 
+    <a href="/?order_by=popular" alt="Popular">Popular</a>
+    <a href="/?order_by=new" alt="New">New</a>
+  </div>
+  
+  {% for list in lists %}
+  <div>
+  <div>
+    <a href="/{{list.id}}" alt="{{list.id}}">
+      <h3>{{list.title}}</h3>
+    </a>
+    (    
+    <a href={{list.url}} target="_blank">
+    {{list.url}}</a>
+    )
+    </div>
+    <div>
+      {{list.points}} points | By: {{list.author}} | {{list.comment}} comments </div>
+  <div>
+  <hr>
+  {% endfor %}
+  
+</body>
+
+</html>
